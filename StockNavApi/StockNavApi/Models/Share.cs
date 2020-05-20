@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,16 +9,28 @@ namespace StockNavApi.Models
 {
     public class Share
     {
-        public double purchasePrice;
+        [Key]
+        public int Id { get; set; }
 
-        public double currentPrice;
+        [Required]
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal purchasePrice { get; set; }
 
-        public double profit;
+        [Required]
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal currentPrice { get; set; }
 
-        public int quantity;
+        [Required]
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal profit { get; set; }
 
-        public DateTime purchaseDate;
+        [Required]
+        public int quantity { get; set; }
 
-        public bool sold;
+        [Required]
+        public DateTime purchaseDate { get; set; }
+
+        [Required]
+        public bool sold { get; set; }
     }
 }

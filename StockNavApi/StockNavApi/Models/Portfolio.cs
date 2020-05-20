@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,16 +9,30 @@ namespace StockNavApi.Models
 {
     public class Portfolio
     {
-        public string label;
+        [Key]
+        public int Id { get; set; }
 
-        public double risk;
+        [Required]
+        [StringLength(10)]
+        public string label { get; set; }
 
-        public double reward;
+        [Required]
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal risk { get; set; }
 
-        public double totalProfit;
+        [Required]
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal reward { get; set; }
 
-        public double totalCost;
+        [Required]
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal totalProfit { get; set; }
 
-        public List<Share> shares;
+        [Required]
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal totalCost { get; set; }
+
+        [Required]
+        public List<Share> shares { get; set; }
     }
 }

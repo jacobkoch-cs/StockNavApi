@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,20 +10,30 @@ namespace StockNavApi.Models
 {
     public class User
     {
-        public int userID;
+        [Key]
+        public int userID { get; set; }
 
-        public string userName;
+        [Required]
+        public string userName { get; set; }
 
-        public string userEmail;
+        [EmailAddress]
+        public string userEmail { get; set; }
 
-        public string userPassword;
+        [PasswordPropertyText]
+        public string userPassword { get; set; }
 
-        public string creditCard;
+        [AllowNull]
+        public string creditCard { get; set; }
 
-        public string address;
+        [Required]
+        [StringLength(95)]
+        public string address { get; set; }
 
-        public string fullName;
+        [Required]
+        [StringLength(25)]
+        public string fullName { get; set; }
 
-        public List<Portfolio> portfolios;
+        [AllowNull]
+        public List<Portfolio> portfolios { get; set; }
     }
 }
