@@ -21,6 +21,7 @@ namespace StockNavApi.Controllers
         }
 
         // GET: api/Shares
+        //Get all shares in the database
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Share>>> GetShares()
         {
@@ -28,6 +29,8 @@ namespace StockNavApi.Controllers
         }
 
         // GET: api/Shares/5
+        // Get shares based on the share id
+        // This method should only be used if the user wants to sell their share
         [HttpGet("{id}")]
         public async Task<ActionResult<Share>> GetShare(int id)
         {
@@ -42,8 +45,9 @@ namespace StockNavApi.Controllers
         }
 
         // PUT: api/Shares/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        // Updates shares based on user input
+        // The only user input that would change this is changing the sold bool
+        // Everything else should be automatically updated
         [HttpPut("{id}")]
         public async Task<IActionResult> PutShare(int id, Share share)
         {
@@ -74,8 +78,7 @@ namespace StockNavApi.Controllers
         }
 
         // POST: api/Shares
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        // Create new shares based on user input
         [HttpPost]
         public async Task<ActionResult<Share>> PostShare(Share share)
         {
@@ -86,6 +89,7 @@ namespace StockNavApi.Controllers
         }
 
         // DELETE: api/Shares/5
+        // Delete shares by their id number
         [HttpDelete("{id}")]
         public async Task<ActionResult<Share>> DeleteShare(int id)
         {

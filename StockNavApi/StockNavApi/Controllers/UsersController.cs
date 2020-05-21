@@ -21,6 +21,7 @@ namespace StockNavApi.Controllers
         }
 
         // GET: api/Users
+        // Get all users
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
@@ -28,6 +29,7 @@ namespace StockNavApi.Controllers
         }
 
         // GET: api/Users/5
+        // Get user based on id
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
@@ -42,8 +44,7 @@ namespace StockNavApi.Controllers
         }
 
         // PUT: api/Users/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        // Update users info based on user input
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, User user)
         {
@@ -74,8 +75,7 @@ namespace StockNavApi.Controllers
         }
 
         // POST: api/Users
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        // Create new users when a user registers a new account
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
@@ -86,6 +86,7 @@ namespace StockNavApi.Controllers
         }
 
         // DELETE: api/Users/5
+        // Deletes a user based on their id
         [HttpDelete("{id}")]
         public async Task<ActionResult<User>> DeleteUser(int id)
         {

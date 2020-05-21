@@ -21,6 +21,7 @@ namespace StockNavApi.Controllers
         }
 
         // GET: api/Portfolios
+        // Get all portfolios in the database
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Portfolio>>> GetPortfolios()
         {
@@ -28,6 +29,7 @@ namespace StockNavApi.Controllers
         }
 
         // GET: api/Portfolios/5
+        // Get the portfolio based on the portfolio id
         [HttpGet("{id}")]
         public async Task<ActionResult<Portfolio>> GetPortfolio(int id)
         {
@@ -42,8 +44,7 @@ namespace StockNavApi.Controllers
         }
 
         // PUT: api/Portfolios/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        // Update portfolios based on the portfolios id
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPortfolio(int id, Portfolio portfolio)
         {
@@ -74,8 +75,7 @@ namespace StockNavApi.Controllers
         }
 
         // POST: api/Portfolios
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        // Create new portfolios based on the user generated portfolio
         [HttpPost]
         public async Task<ActionResult<Portfolio>> PostPortfolio(Portfolio portfolio)
         {
@@ -86,6 +86,7 @@ namespace StockNavApi.Controllers
         }
 
         // DELETE: api/Portfolios/5
+        // Delete a portfolio based on its id
         [HttpDelete("{id}")]
         public async Task<ActionResult<Portfolio>> DeletePortfolio(int id)
         {

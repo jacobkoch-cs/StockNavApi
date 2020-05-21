@@ -13,6 +13,10 @@ namespace StockNavApi.Models
         public int Id { get; set; }
 
         [Required]
+        [StringLength(10)]
+        public string name { get; set; }
+
+        [Required]
         [Column(TypeName = "decimal(18,2)")]
         public decimal purchasePrice { get; set; }
 
