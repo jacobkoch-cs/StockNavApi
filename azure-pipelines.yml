@@ -10,7 +10,7 @@ stages:
 
   variables:
     sdkVersion: 3.1.x
-    solutionPath: .
+    solutionPath: ./StockNavApi
     buildConfiguration: Release
 
   jobs:
